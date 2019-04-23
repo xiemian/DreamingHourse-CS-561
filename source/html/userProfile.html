@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../css/main.css">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+
+    <!-- This is a 3rd-party stylesheet for Font Awesome: http://fontawesome.io/ -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
+
+<link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
+<title>Dream Home | User Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"> -->
+<link rel="stylesheet" type="text/css" href="../../css/userProfile.css" media="screen">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+</head>
+<body>
+  <div class="navbar">
+
+    <div class="navlist">
+       <ul  style="z-index: 99">
+        <li class="navitem site-title" ><a href="index.html"><strong> Dream Home</strong> </a></li>
+        <li class="navitem navlink">
+          <div class="dropdown">
+            <button class="dropbtn"> <a id="user_name" href="#"></a></button>
+            <div class="dropdown-content">
+              <a id= "logout-btn" href="user_profile.html" >My Profile</a>
+              <a id= "logout-btn" href="#">log out</a>
+            </div>
+          </div>
+        </li>
+       </ul>
+    </div>
+
+<div class="tab">
+  <button class="tablinks active" onclick="openTab(event,'my-account')">My Account</button>
+  <button id='sellerAction' class="tablinks" onclick="openTab(event,'upload-house')">Uploaded House</button>
+  <button id='buyerAction' class="tablinks" onclick="openTab(event, 'my-favorite')">My favorite</button>
+</div>
+
+<div id="my-account" class="tabcontent "  style = "display: block;">
+  <!-- <h5>Photo of me:</h5> -->
+
+
+  <div class = "avatar">
+    <img src="../../images/Capture.JPG" >
+  </div>
+
+  <div class="row">
+    <div class="col-75">
+
+      <div class="container">
+        <form >
+
+          <div class="row">
+
+            <div class="col-50">
+              <label for="userName"><i class="fa fa-id-card"></i> User Name</label>
+              <input readonly type="text" id="userName" name="name" placeholder="XXXXX">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input readonly type="text" id="userEmail" name="email" placeholder="Xmn@gmail.com">
+              <label for="phone"><i class="fa fa-phone"></i> Phone</label>
+              <input readonly type="text" id="userPhone" name="phone" placeholder="xxxxxxxxx">
+              <label for="role"><i class="fa fa-registered"></i> Roler</label>
+              <input readonly type="text" id="userRole" name="role" placeholder="Seller">
+            </div>
+
+            
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="upload-house" class="tabcontent" style="display:none">
+
+  <div id="modal-backdrop" class="hidden">
+  </div>
+  <div id="create-item-modal" class="hidden">
+    <div class="modal-dialog">
+      <div class="modal-header" style="background-color: #333333;">        
+        <span class="login100-form-title-1">
+          House Information
+        </span>
+        <button type="button" class="modal-close-button">&times;</button>
+      </div>
+
+      <form id="uploadForm" style="padding-bottom: 50px;" class="login100-form validate-form">
+        <div class="wrap-input100 validate-input m-b-26" data-validate="address is required">
+          <span class="label-input100">Street Address<span style="color: red;">*</span></span>
+          <input class="input100" required type="text" name="address" placeholder="Enter a street address">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-26" data-validate="City is required">
+          <span class="label-input100">City<span style="color: red;">*</span></span>
+          <input class="input100" required type="text" name="city" placeholder="Enter a city">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input m-b-26" data-validate="State is required">
+          <span class="label-input100">State<span style="color: red;">*</span></span>
+          <!-- <input id = "state", class="input100" type="text" name="state" placeholder="Enter a state"> -->
+          <select class="state">     
+              <option value="" selected disabled="disabled">-select-</option>
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="District">District Of Columbia</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
+          <input id = "state", class="input100" required type="text" name="state" placeholder="Enter a state">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-26" data-validate="State is required">
+          <span class="label-input100">Zipcode<span style="color: red;">*</span></span>
+          <input  class="input100" type="text" name="zipCode" placeholder="Enter a zipcode">
+          <span class="focus-input100"></span>
+        </div>
+
+
+        <div class="wrap-input100 validate-input m-b-26" data-validate="Phone number is invalid">
+          <span class="label-input100">Price <span style="color: red;">*</span></span>
+          <input id= "price" class="input100" required type="number" name="price" placeholder="100000">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-26" data-validate="">
+          <span class="label-input100">Living Space <span style="color: red;">*</span></span>
+          <input id = "livingSpace", class="input100" required type="number" name="livingSpace" placeholder="xxxx">
+          <span class="focus-input100"></span>
+        </div>
+
+
+        <div class="wrap-input100 validate-input m-b-18" style="border-bottom: none; width:392px;" data-validate = "#Bedroom #Bathroom is required">
+          <span class="label-input100">More Info<span style="color: red;">*</span></span>
+          <select required style="margin-top: 15px;" class="bed-num">
+            <option value="0" selected>#Bedroom:</option>
+            <option value="1">1 Bedroom</option>
+            <option value="2">2 Bedroom</option>
+            <option value="3">2 Bedroom</option>
+            <option value="4">4+ Bedroom</option>
+          </select>
+          <select  required  style="margin-top: 15px;" class="bath-num">
+            <option value="0" selected>#Bathroom:</option>
+            <option value="1">1 Bathroom</option>
+            <option value="2">2 Bathroom</option>
+            <option value="3">2 Bathroom</option>
+            <option value="4">4+ Bathroom</option>
+          </select>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-26" data-validate="When house built?">
+          <span class="label-input100">Built Year</span>
+          <input class="input100" required type="number" name="buildTime" placeholder="xxxx">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-26" data-validate="">
+          <span class="label-input100">Lot space</span>
+          <input class="input100" required type="number" name="lotSpace" placeholder="the lot space of your house?">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-26" data-validate="URL for Pictures is required">
+          <span class="label-input100">Picture URL<span style="color: red;">*</span></span>
+          <input class="input100" required type="text" name="picURL" placeholder="URL for picture">
+          <span class="focus-input100"></span>
+        </div>
+      <div class="wrap-input100 validate-input m-b-18" data-validate = "Description is required">
+        <span class="label-input100">Description<span style="color: red;">*</span></span>
+
+        <textarea class="input100" rows="4" cols="50" name="description" placeholder="say something about your house"></textarea>
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="modal-cancel-button">Cancel</button>
+        <button class="modal-accept-button">Create Item</button>
+      </div>
+
+      </form>
+
+    </div>
+  </div>
+
+
+
+  <div class="main">
+    <button type="button" id="create-item-button" class = "upload-new-house">
+      Upload new house
+    </button>
+    <main id="uploadedHousesPlace" class="item-container">
+      
+    </main>
+  </div>
+
+
+
+</div>
+
+
+
+
+<div id="my-favorite" class="tabcontent" style="display:none">
+    <main id = "favoriteHousesPlace" class="item-container">
+     
+    </main>
+</div>
+</body>
+<script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="../../js/userProfile.js"></script>
+<script src="../../js/upload.js"></script>
+</html>

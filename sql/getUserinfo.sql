@@ -1,0 +1,1 @@
+SELECT `User_name`,`User_role`,`Email`,`Phone` FROM `User_info` WHERE `User_name` = '222'

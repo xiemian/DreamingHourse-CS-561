@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dream Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/util.css">
+    <link rel="stylesheet" type="text/css" href="../../css/pagination.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../css/filterForm.css">
+
+  </head>
+
+  <body onload="generatePagination(5 ,1, 0)">
+    <div class="navbar">
+      <div class="navlist">
+
+          <ul  style="z-index: 99">
+            <li class="navitem site-title" ><a href="#"><strong> Dream Home</strong> </a></li>
+            <li class="navitem navlink" id = "before_login_show_sign_in"><a href="login.html">Sign In</a></li>
+            <li class="navitem navlink" id = "before_login_show_sign_up"><a href="signUp.html">Sign Up</a></li>
+            <li class="navitem navlink" id = "after_login_show_user_name" style ="display: none">
+              <div class="dropdown">
+                  <button class="dropbtn"> <a id="user_name" href="#"></a></button>
+                  <div class="dropdown-content">
+                      <a id= "logout-btn" href="userProfile.html" >My Profile</a>
+                      <a id= "logout-btn" href="javascript:void(0);" onclick="logOut()">log out</a>
+                  </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <header class = "banner">
+
+      <div class="hero-text">
+          <h1 style="font-size:50px"> Find A Dream House</h1>
+      </div> 
+
+      
+        <form id = 'filter' class="filter-form">
+          <div class="filter-form-container" >
+      		<div class = "box">
+          <label >Zipcode</label> 
+            <input id = 'zipCode' type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+      		<label >City</label>  
+            <input id = 'city' type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+      		<label >State</label>
+            <div class = "custom-select">
+              <select id = "state" style="background-color: white; font-size: 17px; width: 111px; margin-bottom: 8px;">     
+                <option value="" selected disabled="disabled">-select-</option>
+                <option value="Alabama">Alabama</option>
+                <option value="Alaska">Alaska</option>
+                <option value="Arizona">Arizona</option>
+                <option value="Arkansas">Arkansas</option>
+                <option value="California">California</option>
+                <option value="Colorado">Colorado</option>
+                <option value="Connecticut">Connecticut</option>
+                <option value="Delaware">Delaware</option>
+                <option value="District">District Of Columbia</option>
+                <option value="Florida">Florida</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Idaho">Idaho</option>
+                <option value="Illinois">Illinois</option>
+                <option value="Indiana">Indiana</option>
+                <option value="Iowa">Iowa</option>
+                <option value="Kansas">Kansas</option>
+                <option value="Kentucky">Kentucky</option>
+                <option value="Louisiana">Louisiana</option>
+                <option value="Maine">Maine</option>
+                <option value="Maryland">Maryland</option>
+                <option value="Massachusetts">Massachusetts</option>
+                <option value="Michigan">Michigan</option>
+                <option value="Minnesota">Minnesota</option>
+                <option value="Mississippi">Mississippi</option>
+                <option value="Missouri">Missouri</option>
+                <option value="Montana">Montana</option>
+                <option value="Nebraska">Nebraska</option>
+                <option value="Nevada">Nevada</option>
+                <option value="New Hampshire">New Hampshire</option>
+                <option value="New Jersey">New Jersey</option>
+                <option value="New Mexico">New Mexico</option>
+                <option value="New York">New York</option>
+                <option value="North Carolina">North Carolina</option>
+                <option value="North Dakota">North Dakota</option>
+                <option value="Ohio">Ohio</option>
+                <option value="Oklahoma">Oklahoma</option>
+                <option value="Oregon">Oregon</option>
+                <option value="Pennsylvania">Pennsylvania</option>
+                <option value="Rhode Island">Rhode Island</option>
+                <option value="South Carolina">South Carolina</option>
+                <option value="South Dakota">South Dakota</option>
+                <option value="Tennessee">Tennessee</option>
+                <option value="Texas">Texas</option>
+                <option value="Utah">Utah</option>
+                <option value="Vermont">Vermont</option>
+                <option value="Virginia">Virginia</option>
+                <option value="Washington">Washington</option>
+                <option value="West Virginia">West Virginia</option>
+                <option value="Wisconsin">Wisconsin</option>
+                <option value="Wyoming">Wyoming</option>
+              </select>
+            </div>
+          </div>
+          <div class = "box">
+      		  <label> MinPrice</label> 
+            <input id = 'minPrice' type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+  <!--         </div>
+          <div class = "box"> -->
+      		<label> MaxPrice</label>  <input id = 'maxPrice' type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"><br>
+          </div>
+          <div class = "box">
+      		<label> MinSquare</label> 
+            <input id = 'minSquare' type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+    <!--   		</div>
+          <div class = "box"> -->
+          <label> MaxSquare</label>  
+            <input id = 'maxSquare' type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" style="margin-left: 5px;"><br>
+          </div>
+          <div class = "box">
+      		<label> beds</label>
+          <div class = "custom-select"> 
+            <select id="beds" style="background-color: white; font-size: 17px">
+        		  <option value="" selected disabled="disabled">-select-</option>
+        		  <option value="1">1</option>
+        		  <option value="2">2</option>
+        		  <option value="3">3</option>
+              <option value="4">4+</option>
+      		  </select>
+          </div>
+
+      		<label> baths</label> 
+          <div class = "custom-select">
+            <select id="baths" style="background-color: white; font-size: 17px">
+        		  <option value="0" selected disabled="disabled">-select-</option>
+        		  <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+      		  </select>
+          </div>
+          </div>
+        <div class = "filter-form-footer">
+          <button class = "filter-form-submit">Search</button>
+        </div>   		  
+    	  </form>
+
+      </div>
+
+
+ </header>
+ 
+
+  <div id="modal-backdrop" class="hidden"></div>
+    <div id="create-item-modal" class="hidden">
+      <div class="modal-dialog">
+
+<!--         <div class="modal-header">
+          <h3>Share A House Info :)</h3>
+          <button type="button" class="modal-close-button">&times;</button>
+        </div> -->
+
+        <!-- <div class="modal-header" style="background-image: url(../../images/bg-02.jpg);"> -->
+        <div class="modal-header" style="background-color: #333333;">        
+          <span class="login100-form-title-1">
+            Welcome To Our Website!
+          </span>
+          
+          <button type="button" class="modal-close-button">&times;</button>
+        </div>       
+        <div class="modal-content"><h2>Please sign in or sign up to upload your house infomation.</h2></div>
+        <div class="modal-footer">
+          <button type="button" class="modal-sign-button" onclick="window.location.href='login.html'" >Sign In</button>
+          <button type="button" class="modal-sign-button" onclick="window.location.href='signUp.html'">Sign Up</button>
+          <button type="button" class="modal-cancel-button">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="item-container">
+    
+
+
+  </main>
+  
+  <!--House Listing Pagination-->
+  <div id="pagination" >
+  
+  </div> 
+</body>
+
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.runtime.js"></script>
+  <script src="/itemTemplate.js"></script>
+  <script src="/itemPhotoTemplate.js"></script> -->
+  <script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="../../vendor/animsition/js/animsition.min.js"></script>
+  <script src="../../vendor/bootstrap/js/popper.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../../vendor/select2/select2.min.js"></script>
+  <script src="../../vendor/daterangepicker/moment.min.js"></script>
+  <script src="../../vendor/daterangepicker/daterangepicker.js"></script>
+  <script src="../../vendor/countdowntime/countdowntime.js"></script>
+  <script src="../../js/index.js"></script>
+  <script src="../../js/favorite.js"></script>
+  <script src="../../js/housePagination.js"></script>
+  <script src="../../js/customSelect.js"></script>
+</html>

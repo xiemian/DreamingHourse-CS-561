@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Add Item Demo</title>
+
+    <!-- This is a stylesheet that includes the font you should use -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+
+    <!-- This is a 3rd-party stylesheet for Font Awesome: http://fontawesome.io/ -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../css/util.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../css/favorite.css">
+  <style>
+	#createItemButton{
+	    background-color: #4CAF50;
+	    border: none;
+	    color: white;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 4px 2px;
+	    cursor: pointer;
+	}
+  </style>
+  </head>
+  <body>
+
+  	<button id="createItemButton"  >Create New Item</button>
+
+  	<main class="item-container">
+	    <article class="item">
+	      <div class="image-container">
+	        <img class="image" src="../../images/demoPic/demo2.jpg">
+	      </div>
+
+	      <div class="item-content">
+	        <p class="item-location">
+	          <a class = "larger" href="#" > 1515 NW 29th St Corvallis, OR 97330 </a>
+	        </p>
+	        <p class=" larger item-price"> 
+	            $250,000
+	        </p>
+	        <div class = "item-title-container"> 
+	          <i class="item-title fa fa-bed" > 3</i>
+	          <i class="item-title fa fa-bath" > 1 </i>
+	          <p class="item-title">
+	            <a > 1,075 sqft </a>
+	          </p>
+	          <p class="item-title item-builtTime">
+	            <a > Build in 1992 </a>
+	          </p>
+	        </div>
+	        <p class= "item-description-title" > Description</p>
+	        <div class="item-description-container">
+	          <p class = "item-description">
+	            Cute single level home in wonderful location. Spacious corner lot, large for an in-town home, with nice garden areas in the backyard & a treehouse structure. Lovely hardwood floors throughout the home & a cozy corner fireplace. Kitchen includes a newer 4 burner gas range. Vaulted ceilings & large windows. Spend summer nights on the large patio, roasting marshmallows in the fire pit. Roof, furnace, kitchen appliances new in 2011. Close to OSU, multiple parks, & just blocks shopping and restaurants.
+	          </p>
+	        </div>
+	      </div>
+
+	      <div class="fav-container" >
+			<label class="fav">
+			  <input type="checkbox"  >
+			  <span class="checkmark"></span>
+			</label>
+		  </div>
+
+	    </article>
+
+
+	    
+
+  	</main>
+
+
+  </body>
+  <script src="../../vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="../../js/houseListing.js"></script>
+  <script src="../../js/favorite.js"></script>
+  <!-- <script src="../../js/housePagination.js"></script> -->
+
+
+
+
+</html>
